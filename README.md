@@ -6,28 +6,34 @@
 
 
 
-This is my version of the Google Data Analytics Capstone - Case Study 1. The full documentation of the case study as well as the .csv files(which I could not upload here on GitHub because the sizes exceed 25mb) can be found in the Google Data Analytics Capstone: Complete a Case Study course.
+This is my version of the Google Data Analytics Capstone - Case Study 1. The full documentation of the case study as well as the .csv files(I could not upload the .csv files here on GitHub because the sizes exceed 25mb) can be found in the 'Google Data Analytics Capstone: Complete a Case Study course'.
 
-For this project these steps below will be followed to ensure its completion:
+For this project, these steps below will be followed to ensure its completion:
 •	the six Google data analysis phases: Ask, Prepare, Process, Analyze, Share, and Act.
 •	Each step will also follow these roadmaps with: Guiding questions and answers, Key tasks as a checklist, Deliverable as a checklist and  Codings if needed.
 
 
 ### Ask
 
-For the ask step, let's get some context from the Cyclistic Bike Share document:
+For the Ask step, let's get some context from the Cyclistic Bike Share document:
 - Scenario: As a junior data analyst working in the Marketing Analytics team at Cyclistic (a bike-share company in Chicago), the Director of Marketing believes the company’s future success depends on maximizing the number of annual memberships. Therefore, your team wants to understand how casual riders and annual members use Cyclistic bikes differently. From these insights, your team will design new marketing strategies to convert casual riders into annual members. But firstly, Cyclistic Executives must approve your recommendations which must be backed up with compelling data insights and professional data visualizations.
 
-- Characters and teams
-Cyclistic: A bike-share program that features more than 5,800 bicycles and 600 docking stations. It sets itself apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with disabilities and riders who can’t use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about 8% of riders use assistive options. Cyclistic users are more likely to ride for leisure, but about 30% use them to commute to work each day.
-Lily Moreno: The director of marketing and your manager. Moreno is responsible for the development of campaigns and initiatives to promote the bike-share program. These may include email, social media, and other channels.
-Marketing Analytics team: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy. You joined this team six months ago and have been busy learning about Cyclistic’s mission and business goals — as well as how you, as a junior data analyst, can help Cyclistic achieve them.
-Cyclistic executive team: The notoriously detail-oriented executive team will decide whether to approve the recommended marketing program.
-Guiding questions
-•	What is the problem you are trying to solve?
-The main objective is to determine a way to build a profile for annual members and the best marketing strategies to turn casual bike riders into annual members.
-•	How can your insights drive business decisions?
-The insights will help the marketing team to increase annual members.
+- Characters:
+1. Cyclistic: A bike-share program that features more than 5,800 bicycles and 600 docking stations. It sets itself apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with disabilities and riders who can’t use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about 8% of riders use assistive options. Cyclistic users are more likely to ride for leisure, but about 30% use them to commute to work each day.
+2. Cyclistic Executive team: The notoriously detail-oriented Executive team will decide whether to approve the recommended marketing strategies.
+3. Marketing Analytics team: A team of data analysts who are responsible for collecting, analyzing, and reporting data that helps guide Cyclistic marketing strategy. As a junior data analyst who joined this team six months ago, you have been busy learning about Cyclistic’s mission and business goals as well as how to help Cyclistic achieve them.
+4. Lily Moreno: The director of Marketing Analytics team who is responsible for the development of campaigns and initiatives to promote the bike-share program. These may include email, social media, and other channels.
+
+- Guiding questions
+1. What is the problem you are trying to solve?
+   The main objective is to determine a way to build a profile for annual members and the best marketing strategies to turn casual bike riders into annual members.
+2. How can your insights drive business decisions?
+   The insights will help the marketing team to increase annual members.
+   
+   
+   
+   
+   
 
 
 
