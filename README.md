@@ -150,7 +150,7 @@ unique_rides %>% write.csv("clean_cyclist_dataset.csv")
 1. Documentation of all data cleaning and transformation steps.
 
 
-### Analyze
+### Analyze Phase
 
 The data exploration will check how annual members differ from casual riders.
 
@@ -180,8 +180,8 @@ ggplot(unique_rides, aes(member_casual, fill=member_casual)) +
   ![Cyclistic Members](https://user-images.githubusercontent.com/112668327/204116478-b1a7a91c-7d14-4cd7-ace7-d6317b4a8b85.jpeg)
 
 
-
-After running the codes above, it can be seen that there were about 2,559,857 Casual rides and 3,300,919 Member rides. 
+-- it can be seen that:
+1. there were about 2,559,857 Casual rides and 3,300,919 Member rides. 
 
 - What is the distribution of the total rides per month?
  
@@ -218,175 +218,117 @@ ggplot(unique_rides, aes(y = start_day, fill=start_day)) +
 
 
 It can be seen that:
-1. There was more data points in the second half of 2021.
-2. The month with the biggest count of rides was July (with 14% of the total dataset).
-3. The month with the smallest count of rides was January with (with 1.8% of the total dataset).
-4. In all months we have more members' rides than casual rides. This can be as a result of returning members).
+1. there was more data points in the first three weeks of each month.
+2. we usually record the lowest number of rides towards the end of each month (further investigation can be done on this).
 
 - What is the distribution of the total rides per type of bike?
 
 ridetype_data <- unique_rides %>% group_by(rideable_type) %>% summarise(count = n_distinct(ride_id))
 
-ridetype_data[order(ridetype_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-
-To view the dataset in the  distribution:
+-- To view the dataset in the  distribution
 
 ggplot(unique_rides, aes(rideable_type, fill=rideable_type)) +
   geom_bar() +
   labs(x="Different types of rides", title="Chart 02 - Distribution per Rideable Types")
+
+
+![Cyclistic Ridetypes](https://user-images.githubusercontent.com/112668327/204117196-c8b540d9-c03d-4b52-b929-dd9227ff0b59.jpeg)
+
+
 
 It can be seen that:
-1. There was more data points in the second half of 2021.
-2. The month with the biggest count of rides was July (with 14% of the total dataset).
-3. The month with the smallest count of rides was January with (with 1.8% of the total dataset).
-4. In all months we have more members' rides than casual rides. This can be as a result of returning members).
+1. Classic bikes have the highest volume of rides(3,217,737 ride count) closely followed by Electric bikes(with 2,368,592 ride count) while Docked bikes have the smallest volume of rides(with 274,447 ride count). This can be either because the company have more classic bikes than other bikes or it is a clear indication of riders’ preference.
 
-•	Docked bikes have the smallest volume of rides(274,447 ride counts) while Classic bikes have the highest volume of rides(3,217,737 ride count). Electric bikes closely follows Classic bikes with a ride count of 2,368,592 rides. 
-•	This can be that the company may have more classic bikes than other bikes or it is a clear indication of riders’ preference.
- 
- 
- 
- 
- 
- 
- 
-Guiding questions
-•	How should you organize your data to perform analysis on it?
-The data has been organized into a single CSV concatenating all the files from the dataset.
-•	Has your data been properly formatted?
-Yes, all the columns have their correct data type.
-•	What surprises did you discover in the data?
-One of the main surprises is the margin of difference among the three types of bikes. 
-•	What trends or relationships did you find in the data?
-	There are more members than casuals in the dataset.
-	There are more data points in the last semester of 2021.
-	Majority of the riders tend to prefer classic bikes.
-•	How will these insights help answer your business questions?
-This insights helps to build a profile for members.
-Key tasks
-•	  Aggregate your data so it’s useful and accessible.
-•	  Organize and format your data.
-•	  Perform calculations.
-•	  Identify trends and relationships.
-Deliverable
-•	  A summary of your analysis
+- Guiding questions:
+1. How should you organize your data to perform analysis on it?
+   The data has been organized into a single CSV by appending all the files from the dataset into a single dataframe.
+3. Has your data been properly formatted?
+   Yes, all the columns have their correct data type.
+5. What surprises did you discover in the data?
+   One of the main surprises is the margin of difference among the three types of bikes. 
+7. What trends or relationships did you find in the data?
+-- There are more members than casuals in the dataset.
+-- There are more data points in the last semester of 2021.
+-- Majority of the riders tend to prefer classic bikes.
+9. How will these insights help answer your business questions?
+   These insights help to understand riders' behaviours across days and months in the considered period in time, which can serve as a guide to devising better marketing strategies (if further investigations can be carried out) in order to build a profile for members.
 
-### Share
+- Key tasks:
+1. Organize and format your data.
+2. Perform calculations.
+3. Aggregate your data so it’s useful and accessible.
+4. Identify trends and relationships.
 
-The share phase is usually done by building a presentation. 
-Let's go through the main finds and try to arrive at a conclusion.
-What we know about the dataset:
-•	Members have the biggest proportion of the dataset.
-•	There's more data points at the last semester of 2021.
-•	The month with the biggest count of data points was July.
-•	The month with the biggest count of data points was January.
-•	In all months we have more members' rides than casual rides.
-The big question is: Why are there more members than casual? One plausible answer is that members have a bigger need for the bikes than casuals, as can be seen on how there are more members than casuals on cold months.
-Concluding:
-•	Members use the bikes for fixed activities, which can be recreational or work-related.
-Guiding questions
-•	Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
-Yes. The data points to several differences between casuals and members.
-•	What story does your data tell?
-The main story the data tells is that these timestamps point out that members use the bikes for routine activities, like going to work or for recreational purposes.
-•	How do your findings relate to your original question?
-The findings build a profile for members, relating to "Find the keys differences between casuals and annual riders", also knowing when they use the bikes helps to find "How digital media could influence them".
-•	Who is your audience? What is the best way to communicate with them?
-The main target audience is my Cyclistic Marketing Analytics team and Lily Moreno. The best way to communicate is through a slide presentation of the findings.
-•	Can data visualization help you share your findings?
-Yes, the main core of the finds is through data visualization.
-•	Is your presentation accessible to your audience?
-Yes, the plots were made using vibrant colors, and corresponding labels.
-Key tasks
-•	  Determine the best way to share your findings.
-•	  Create effective data visualizations.
-•	  Present your findings.
-•	  Ensure your work is accessible.
-Deliverable
-•	  Supporting visualizations and key findings
+- Deliverables:
+•	  A summary of the analysis
 
-### Act
 
-The act phase would be done by the marketing team of the company. The main takeaway will be the top three recommendations for the marketing.
-Guiding questions
-•	What is your final conclusion based on your analysis?
-Members and casual have different habits when using the bikes. The conclusion is further stated on the share phase.
-•	How could your team and business apply your insights?
-The insights could be implemented when preparing a marketing campaign for turning casual into members. The marketing can have a focus on workers as a green way to get to work.
-•	What next steps would you or your stakeholders take based on your findings?
-Further analysis could be done to improve the findings, besides that, the marketing team can take the main information to build a marketing campaign.
-•	Is there additional data you could use to expand on your findings?
-	Mobility data.
-	Improved climate data.
-	More information on members.
-Key tasks
-•	  Create your portfolio.
-•	  Add your case study.
-•	  Practice presenting your case study to a friend or family members.
-Deliverable
+### Share Phase
+
+The share phase is usually done by building a presentation as well as asking further questions making suggestions or conclusions.
+
+- What are the major findings from the dataset?
+1. Members have the biggest proportion of the dataset.
+2. There's more data points at the last semester of 2021.
+3. The month with the biggest count of data points was July.
+4. The month with the lowest count of data points was January.
+5. In all months, we have more members' rides than casual rides.
+
+- What further questions can be asked from the dataset as well as possible reasons/suggestions?
+-- The big question is; why are there more members than casual? 
+   One possible answer(due to lack of complete information from the dataset) is that members have a bigger need for the bikes than casuals, especially during the cold months as can be seen from the dataset. Also, it is possible that members use the bikes for fixed and personal activities, which can be recreational or work-related.
+
+- Guiding questions:
+1. Were you able to answer the question of how annual members and casual riders use Cyclistic bikes differently?
+   Yes. The dataset points to several differences between casuals and members according to days and months of the considered period in time.
+3. What story does your data tell?
+   The main story the data tells is that these timestamps point out that members use the bikes for routine activities, like going to work or for recreational purposes.
+5. How do your findings relate to your original question?
+   These insights help to understand riders' behaviours across days and months which can serve as a guide to devising better marketing strategies (if further investigations can be carried out) in order to build a profile for members and knowing how digital media could influence them.
+7. Who is your audience and what is the best way to communicate with them?
+   The target audience is Lily Moreno and the Cyclistic Marketing Analytics team. The best way to communicate is through a slide presentation of the findings.
+9. Can data visualization help you share your findings?
+   Yes, the core of the findings is through its visualizations.
+11. Is your presentation accessible to your audience?
+   Yes, the plots were made using vibrant colors and corresponding labels.
+
+- Key tasks:
+1. Determine the best way to share your findings.
+2. Create effective data visualizations.
+3. Present your findings.
+4. Ensure your work is accessible.
+
+- Deliverables:
+1. Supporting visualizations and key findings.
+
+
+### Act Phase
+
+This phase will be carried out by the Marketing Team of the company. The main takeaways for them will be the recommendations made by the Marketing Analytics team.
+
+- Guiding questions:
+1. What is your final conclusion based on your analysis?
+   Members and casual have different habits when using the bikes. The conclusion is further stated on the share phase.
+3. How could your team and business apply your insights?
+   The insights could be implemented when preparing a marketing campaign for turning casual into members. The marketing can have a focus on workers as a green way to get to work.
+5. What next steps would you or your stakeholders take based on your findings?
+   Further analysis could be done to improve the findings, besides that, the marketing team can take the main information to build a marketing campaign.
+7. Is there additional data you could use to expand on your findings?
+-- Mobility data.
+-- Climate data.
+-- More information from members and casuals such as: reasons for bike preference.
+
+- Key tasks:
+1. Create a portfolio.
+2. Add the case study.
+3. Practice presenting the case study to a family, friends or colleagues.
+
+- Deliverables:
 The top three recommendations based on the analysis:
-1.	Build a marketing campaign focusing on show how bikes help people to get to work, while maintaining the planet green and avoid traffic. The ads could be show on professional social networks.
-2.	Increase benefits for riding during cold months. Coupons and discounts could be handed out.
-3.	As the bikes are also used for recreations, ads campaigns could also be made showing people using the bikes for exercise during the weeks. The ads could focus on how practical and consistent the bikes can be.
-
-### Conclusion
-The Google Analytics Professional Certificate teached me a lot about R language which  is really useful for analysing data. Though this took me more time than I expected, but it was fun while it lasted.
+1.	Build a marketing campaign focusing on how bikes help people to get to work faster by avoiding traffic while keeping the planet green and safe. The ads could be shown on professional social networks.
+2.	Increase benefits for riding during cold months. Coupons and discounts could be handed out to users with high ride counts.
+3.	As the bikes are also used for recreational activities, ads campaigns could be made showing people how practical and consistent the bikes can be for exercises during the week.
 
 
-   
-   
-   
-
-
-
-
-
-
-## DATA DISTRIBUTION AND VISUALISATION
-
-
-#7 Find the total number of rides recorded.
-
-nrow(unique_rides)
-
-#8 Find the distribution of rides according to the member groups and make its bar chart visual.
-
-members_data <- unique_rides %>% group_by(member_casual) %>% summarise(count = n_distinct(ride_id))
-members_data[order(members_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-view(members_data)
-
-ggplot(unique_rides, aes(member_casual, fill=member_casual)) +
-  geom_bar() +
-  labs(x="Casuals vs Members", title="Chart 01 - Casuals vs Members Distribution")
-
-#9 Find the distribution of rides according to the rideable types and make its bar chart visual.
-
-ridetype_data <- unique_rides %>% group_by(rideable_type) %>% summarise(count = n_distinct(ride_id))
-ridetype_data[order(ridetype_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-view(ridetype_data)
-
-ggplot(unique_rides, aes(rideable_type, fill=rideable_type)) +
-  geom_bar() +
-  labs(x="Different types of rides", title="Chart 02 - Distribution per Rideable Types")
-
-#10 Find the distribution of rides according to the month and make its bar chart visual.
-
-months_data <- unique_rides %>% group_by(start_month) %>% summarise(count = n_distinct(ride_id))
-months_data[order(months_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-view(months_data)
-
-ggplot(unique_rides, aes(start_month, fill=start_month)) +
-  geom_bar() +
-  labs(x="Month NumberCodes", title="Chart 03 - Distribution per Month")
-
-#11 Find the distribution of rides according to the days and make its bar chart visual.
-
-days_data <- unique_rides %>% group_by(start_day) %>% summarise(count = n_distinct(ride_id))
-days_data[order(days_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-view(days_data)
-
-ggplot(unique_rides, aes(y = start_day, fill=start_day)) +
-  geom_bar() +
-  labs(y="Day NumberCodes", title="Chart 04 - Distribution per Day")
-
-## CREATION OF A DASHBOARD TO CONTAIN ALL THE DIFFERENT VISUALS AND SAVING IT AS A PICTURE OR R-FILE.
+### CONCLUSION
+The Google Analytics Professional Certificate teached me a lot about R language which  is really useful for analysing data. Though this took me more time than I expected(and not so easy like Python) but it was fun while it lasted. 
