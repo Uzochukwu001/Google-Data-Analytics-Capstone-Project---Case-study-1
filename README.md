@@ -183,21 +183,24 @@ ggplot(unique_rides, aes(member_casual, fill=member_casual)) +
 
 After running the codes above, it can be seen that there were about 2,559,857 Casual rides and 3,300,919 Member rides. 
 
- 
-
-
-
-Month
-How much of the data is distributed by month?
+- What is the distribution of the total rides per month?
  
 months_data <- unique_rides %>% group_by(start_month) %>% summarise(count = n_distinct(ride_id))
-months_data[order(months_data$count, decreasing = TRUE),]   #to arrange in decreasing order
+
+-- to arrange in decreasing order
+
+months_data[order(months_data$count, decreasing = TRUE),]   
  
-To view the dataset in the  distribution:
+-- to view the dataset in the  distribution
 
 ggplot(unique_rides, aes(start_month, fill=start_month)) +
   geom_bar() +
   labs(x="Month NumberCodes", title="Chart 03 - Distribution per Month")
+
+
+![Cyclistic MonthDistribution](https://user-images.githubusercontent.com/112668327/204116593-f7714f24-0833-4042-a72b-2effdf091922.jpeg)
+
+
 
 Some considerations can be taken by this chart:
 •	There was more data points in the second half of 2021.
