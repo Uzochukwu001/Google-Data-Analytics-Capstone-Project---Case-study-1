@@ -131,7 +131,7 @@ unique_rides %>% write.csv("clean_cyclist_dataset.csv")
 - Guiding questions:
 1. What tools are you choosing and why?
    I'm using R for this project, for two main reasons: Because of the large dataset and to gather experience with the language.
-22. Have you ensured your datasets' integrity?
+2. Have you ensured your datasets' integrity?
    Yes, the data is consistent throughout the columns.
 3. What steps have you taken to ensure that your data is clean?
    First the duplicated values were removed and the relevant columns were formatted to their correct format.
@@ -149,24 +149,26 @@ unique_rides %>% write.csv("clean_cyclist_dataset.csv")
 - Deliverables:
 1. Documentation of all data cleaning and transformation steps.
 
+
 ### Analyze
 
-The data exploration will consist of building a profile for annual members and how they differ from casual riders.
-Putting in a new variable with a simpler name will help reduce some typing in the future.
+The data exploration will check how annual members differ from casual riders.
 
-Code: 
- 
-Data distribution
-Here we want to try to answer the most basic questions about how the data is distributed.
-Total Number of Rides over the 12 months.
+- Code: Here we want to try to answer the most basic questions about how the data is distributed.
+
+- What is the otal number of rides over the 12 months?
+
 nrow(unique_rides)
-It can be seen there was a total of  5,860,776 rides in the past 12 months.
-Casuals vs members
-How much of the data is about members and how much is about casuals?
+
+After running the above code, it can be seen there was a total of 5,860,776 rides in the past 12 months.
+
+- What is the distribution of the total rides between members and casual riders?
 
 members_data <- unique_rides %>% group_by(member_casual) %>% summarise(count = n_distinct(ride_id))
 
-members_data[order(members_data$count, decreasing = TRUE),]   #to arrange in decreasing order
+-- to arrange in decreasing order
+
+members_data[order(members_data$count, decreasing = TRUE),] 
 
 It can be seen that there were about 2559857 Casual rides and 3300919 Member rides. 
 
