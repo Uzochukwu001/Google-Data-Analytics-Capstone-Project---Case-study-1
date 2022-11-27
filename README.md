@@ -156,7 +156,7 @@ The data exploration will check how annual members differ from casual riders.
 
 - Code: Here we want to try to answer the most basic questions about how the data is distributed.
 
-- What is the otal number of rides over the 12 months?
+- What is the total number of rides over the 12 months?
 
 nrow(unique_rides)
 
@@ -170,15 +170,22 @@ members_data <- unique_rides %>% group_by(member_casual) %>% summarise(count = n
 
 members_data[order(members_data$count, decreasing = TRUE),] 
 
-It can be seen that there were about 2559857 Casual rides and 3300919 Member rides. 
-
- 
-
-To view the distribution in the dataset:
+-- to view the distribution in the dataset
 
 ggplot(unique_rides, aes(member_casual, fill=member_casual)) +
   geom_bar() +
   labs(x="Casuals vs Members", title="Chart 01 - Casuals vs Members Distribution")
+  
+  
+  ![Cyclistic Members](https://user-images.githubusercontent.com/112668327/204116478-b1a7a91c-7d14-4cd7-ace7-d6317b4a8b85.jpeg)
+
+
+
+After running the codes above, it can be seen that there were about 2,559,857 Casual rides and 3,300,919 Member rides. 
+
+ 
+
+
 
 Month
 How much of the data is distributed by month?
