@@ -331,4 +331,4 @@ The top three recommendations based on the analysis:
 
 
 ### CONCLUSION
-The Google Analytics Professional Certificate teached me a lot about R language which  is really useful for analysing data. Though this took me more time than I expected(and not so easy like Python) but it was fun while it lasted. 
+The Google Analytics Professional Certificate taught me a lot about R language which is really useful for analysing data. Though this took me more time than I expected(and not so easy like Python) but it was fun while it lasted. 
