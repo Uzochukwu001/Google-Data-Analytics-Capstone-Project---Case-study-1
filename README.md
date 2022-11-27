@@ -9,8 +9,8 @@
 This is my version of the Google Data Analytics Capstone - Case Study 1. The full documentation of the case study as well as the .csv files(I could not upload the .csv files here on GitHub because the sizes exceed 25mb) can be found in the 'Google Data Analytics Capstone: Complete a Case Study course'.
 
 For this project, these steps below will be followed to ensure its completion:
-•	the six Google data analysis phases: Ask, Prepare, Process, Analyze, Share, and Act.
-•	Each step will also follow these roadmaps with: Guiding questions and answers, Key tasks as a checklist, Deliverable as a checklist and  Codings if needed.
+- the six Google data analysis phases: Ask, Prepare, Process, Analyze, Share, and Act.
+- Each step will also follow these roadmaps with: Guiding questions and answers, Key tasks as a checklist, Deliverable as a checklist and  Codings if needed.
 
 
 ### Ask Phase
@@ -187,10 +187,6 @@ After running the codes above, it can be seen that there were about 2,559,857 Ca
  
 months_data <- unique_rides %>% group_by(start_month) %>% summarise(count = n_distinct(ride_id))
 
--- to arrange in decreasing order
-
-months_data[order(months_data$count, decreasing = TRUE),]   
- 
 -- to view the dataset in the  distribution
 
 ggplot(unique_rides, aes(start_month, fill=start_month)) +
@@ -201,34 +197,34 @@ ggplot(unique_rides, aes(start_month, fill=start_month)) +
 ![Cyclistic MonthDistribution](https://user-images.githubusercontent.com/112668327/204116593-f7714f24-0833-4042-a72b-2effdf091922.jpeg)
 
 
+It can be seen that:
+1. There was more data points in the second half of 2021.
+2. The month with the biggest count of rides was July (with 14% of the total dataset).
+3. The month with the smallest count of rides was January with (with 1.8% of the total dataset).
+4. In all months we have more members' rides than casual rides. This can be as a result of returning members).
 
-Some considerations can be taken by this chart:
-•	There was more data points in the second half of 2021.
-•	The month with the biggest count of rides was July with ~14% of the total dataset.
-•	The month with the smallest count of rides was January with ~1.8% of the total dataset.
-•	In all months we have more members' rides than casual rides (Maybe because of returning members).
- 
- 
- 
- 
-Day Number
-How much of the data is distributed by day?
+- What is the distribution of the total rides per day of the week?
+
 days_data <- unique_rides %>% group_by(start_day) %>% summarise(count = n_distinct(ride_id))
 
-days_data[order(days_data$count, decreasing = TRUE),]   #to arrange in decreasing order
-
-To view the dataset in the  distribution:
+-- to view the dataset in the  distribution
 
 ggplot(unique_rides, aes(y = start_day, fill=start_day)) +
   geom_bar() +
   labs(y="Day NumberCodes", title="Chart 04 - Distribution per Day")
 
 
-  
- 
- 
-Rideable type
-How much of the data is distributed by day?
+![Cyclistic DayDistribution](https://user-images.githubusercontent.com/112668327/204116909-7d4b5c75-9a98-4170-a7b4-e01e51e04050.jpeg)
+
+
+It can be seen that:
+1. There was more data points in the second half of 2021.
+2. The month with the biggest count of rides was July (with 14% of the total dataset).
+3. The month with the smallest count of rides was January with (with 1.8% of the total dataset).
+4. In all months we have more members' rides than casual rides. This can be as a result of returning members).
+
+- What is the distribution of the total rides per type of bike?
+
 ridetype_data <- unique_rides %>% group_by(rideable_type) %>% summarise(count = n_distinct(ride_id))
 
 ridetype_data[order(ridetype_data$count, decreasing = TRUE),]   #to arrange in decreasing order
@@ -239,7 +235,12 @@ ggplot(unique_rides, aes(rideable_type, fill=rideable_type)) +
   geom_bar() +
   labs(x="Different types of rides", title="Chart 02 - Distribution per Rideable Types")
 
-It's important to note that:
+It can be seen that:
+1. There was more data points in the second half of 2021.
+2. The month with the biggest count of rides was July (with 14% of the total dataset).
+3. The month with the smallest count of rides was January with (with 1.8% of the total dataset).
+4. In all months we have more members' rides than casual rides. This can be as a result of returning members).
+
 •	Docked bikes have the smallest volume of rides(274,447 ride counts) while Classic bikes have the highest volume of rides(3,217,737 ride count). Electric bikes closely follows Classic bikes with a ride count of 2,368,592 rides. 
 •	This can be that the company may have more classic bikes than other bikes or it is a clear indication of riders’ preference.
  
